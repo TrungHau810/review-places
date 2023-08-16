@@ -15,7 +15,7 @@ $(document).ready(() => {
         $("div.tab-content").hide();
         $("#tab-content-" + tabID).show();
     });
-    $(".hightbox-content").hide();
+    $(".discover .hightbox-content").hide();
     $(".item").click(function(){
         let x = $(this).attr("id").replace("item-", "");
         $(".hightbox-content").hide();
@@ -24,5 +24,15 @@ $(document).ready(() => {
             $(".hightbox-content-" + x).hide();
         });
     });
-
+    setTimeout(timeNow(),1000);
 });
+function timeNow(){
+    const today = new Date();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    document.querySelector(".time").textContent = "Giờ địa phương: " + time;
+}
+// window.onload = function(){
+//     setTimeout(timeNow(),1000);
+// }
+
+// setTimeout(timeNow(),1000);

@@ -8,9 +8,6 @@ html{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-*::selection{
-    background-color: #49b9ff;
-}
 /* Đặt class */
 .default{
     background-color: white;
@@ -24,13 +21,36 @@ a,li{
     list-style-type: none;
     text-decoration: none;
 }
-.heading {
-    margin-top: 1.5em;
+/* Heading-title */
+.text{
+    margin-left: 2rem;
 }
-.heading > p:first-child{
+.heading-title {
+    margin-top: 1.5em;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.heading-title .text > p{
     font-size: 3em;
     font-weight: 700;
     text-shadow: 0px 0px 20px #21ccf3;
+}
+/* Bảng thông tin điểm đến */
+.info-place{
+    width: 300px;
+    color: #51af43;
+    text-align: justify;
+    border: 1px #51af43 solid;
+    border-radius: 10px;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+.info-place > .fact{
+    margin: 1em;
+}
+.info-place h3{
+    text-align: center;
+    margin-top: 10px;
 }
 .heading-image{
     width: 100vw;
@@ -41,21 +61,17 @@ a,li{
     height: 100%;
     object-fit: cover;
 }
-.heading{
-    text-align: center;
-}
-.heading .destination{
+.heading-title .destination{
     width: 100%;
     font-size: 16px;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
-.heading .destination p{
+.heading-title .destination p{
     text-align: justify;
     margin-top: 1em;
-    padding-right: 15%;
-    padding-left: 15%;
+    /* padding-right: 15%;
+    padding-left: 15%; */
     margin-bottom: 3rem;
 }
 /* Discover Phú Quốc */
@@ -131,13 +147,15 @@ a,li{
 }
 /* Hightbox */
 .hightbox-content{
-    width: 90.05vw;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 9999;
-    background-color: rgba(159, 159, 159, 0.259);
+    background-color: rgba(65, 64, 64, 0.259);
 }
 .hightbox-content > div{
     width: 70%;
@@ -155,10 +173,17 @@ a,li{
     font-size: 1.5em;
     color: red;
 }
-.hightbox-content
+.hightbox-content .image{
+    width: 95%;
+    border-radius: 15px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
 .hightbox-content .image > img{
-    width: 100%;
-    object-fit: cover;
+    width: 100%;    object-fit: cover; 
+    border-radius: 15px;
 }
 .hightbox-content .describe{
     text-align: justify;
@@ -167,9 +192,13 @@ a,li{
 .hightbox-content .describe *{
     margin-top: 1em;
 }
-.hightbox-content .describe h2{
+.hightbox-content .heading{
     padding-bottom: 0.5em;
     border-bottom: 0.5px #7a868e solid;
+    font-weight: 700;
+}
+.hightbox-content .heading h2{
+    text-transform: uppercase;
 }
 .hightbox-content .describe li{
     margin-left: 2em;
