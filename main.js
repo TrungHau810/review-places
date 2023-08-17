@@ -15,24 +15,32 @@ $(document).ready(() => {
         $("div.tab-content").hide();
         $("#tab-content-" + tabID).show();
     });
-    $(".discover .hightbox-content").hide();
+    $(".hightbox-content").hide();
     $(".item").click(function(){
+        let tabID = $(this).attr("class").replace("item #", "");
         let x = $(this).attr("id").replace("item-", "");
+        let selector = ".more-" + tabID +" .hightbox-content-" + x;
         $(".hightbox-content").hide();
-        $(".hightbox-content-" + x).show();
+        $(selector).show();
         $(".delete").click(function(){
-            $(".hightbox-content-" + x).hide();
+            $(selector).hide();
         });
     });
-    setTimeout(timeNow(),1000);
 });
-function timeNow(){
-    const today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.querySelector(".time").textContent = "Giờ địa phương: " + time;
+function ShowTimeNow(){
+    const curDate = new Date(); //Ngày hiện tại
+    var curHour = curDate.getHours(); // Giờ hiện tại
+    var curMin = curDate.getMinutes(); // Phút hiện tại
+    var curSec = curDate.getSeconds(); // Giây hiện tại
+    // Định dạng giờ theo kiểu HH:MM:SS
+    var timeStr = (curHour < 10 ? "0" + curHour : curHour) + ":" +
+                    (curMin < 10 ? "0" + curMin : curMin) + ":" +
+                    (curSec < 10 ? "0" + curSec : curSec);    
+    // Gán vào thẻ HTML có id là "time"
+    document.getElementById("time").innerHTML = "Giờ địa phương: " + timeStr;
+  }
+  //Gọi hàm khi tải xong trang web
+window.onload = function(){
+   ShowTimeNow();
 }
-// window.onload = function(){
-//     setTimeout(timeNow(),1000);
-// }
-
-// setTimeout(timeNow(),1000);
+setInterval(ShowTimeNow, 1000);    //Gọi lại hàm sau mỗi 60 giây

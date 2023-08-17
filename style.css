@@ -23,27 +23,40 @@ a,li{
 }
 /* Heading-title */
 .text{
-    margin-left: 2rem;
+    margin-left: 5rem;
+    margin-right: 2rem;
+}
+.text .destination > p{
+    font-size: 1.5em;
 }
 .heading-title {
-    margin-top: 1.5em;
+    margin-top: 3em;
     display: grid;
     grid-template-columns: auto auto;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
 }
 .heading-title .text > p{
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 700;
     text-shadow: 0px 0px 20px #21ccf3;
 }
 /* Bảng thông tin điểm đến */
 .info-place{
     width: 300px;
+    height: 360px;
     color: #51af43;
     text-align: justify;
     border: 1px #51af43 solid;
     border-radius: 10px;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+.info-place i{
+    font-weight: 700;
+    font-size: 1.5em;
 }
 .info-place > .fact{
     margin: 1em;
@@ -155,7 +168,7 @@ a,li{
     left: 0;
     right: 0;
     z-index: 9999;
-    background-color: rgba(65, 64, 64, 0.259);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .hightbox-content > div{
     width: 70%;
